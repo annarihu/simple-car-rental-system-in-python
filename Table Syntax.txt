@@ -1,0 +1,66 @@
+drop database if exists CAR;
+create database CAR;
+use CAR;
+
+create table cars
+(
+Car_no int(4),
+Car_class char(10),
+Model_name char(20),
+Car_color char(10),
+Capacity int,
+Daily_Rent int,
+Car_Status char(10) default 'AVAILABLE',
+Rent_ID int default NULL
+);
+
+
+insert into cars values(1101,'SUV','KIA SELTOS','WHITE',5,1700,'AVAILABLE',NULL);
+insert into cars values(1102,'SUV','MAHINDRA SCORPIO','GREY',7,1500,'AVAILABLE',NULL);
+insert into cars values(1103,'SUV','TOYOTA FORTUNER','BLACK',7,1900,'AVAILABLE',NULL);
+insert into cars values(1104,'SUV','MG HECTOR','RED',5,2000,'AVAILABLE',NULL);
+insert into cars values(1201,'SEDAN','HONDA CITY','RED',5,900,'AVAILABLE',NULL);
+insert into cars values(1202,'SEDAN','HYUNDAI VERNA','WHITE',6,950,'AVAILABLE',NULL);
+insert into cars values(1203,'SEDAN','SKODA RAPID','GREY',5,1000,'AVAILABLE',NULL);
+insert into cars values(1204,'SEDAN','NISSAN SUNNY','GREY',5,850,'AVAILABLE',NULL);
+insert into cars values(1301,'LUXURY','RANGE ROVER','WHITE',4,4000,'AVAILABLE',NULL);
+insert into cars values(1302,'LUXURY','AUDI Q6','BLACK',2,3500,'AVAILABLE',NULL);
+insert into cars values(1303,'LUXURY','LIMOUSINE','BLACK',7,6000,'AVAILABLE',NULL);
+insert into cars values(1304,'LUXURY','MERCEDES BENZ','WHITE',4,4500,'AVAILABLE',NULL);
+insert into cars values(1401,'SPORTS','PORSCHE 911 CARRERA','WHITE',2,4800,'AVAILABLE',NULL);
+insert into cars values(1402,'SPORTS','JAGUAR F-TYPE','BLACK',2,4700,'AVAILABLE',NULL);
+insert into cars values(1403,'SPORTS','NISSAN GT-R','BLACK',2,4300,'AVAILABLE',NULL);
+insert into cars values(1404,'SPORTS','BUGGATI CHIRON','SILVER',2,5000,'AVAILABLE',NULL);
+
+
+
+create table admins
+(
+password varchar(10)
+);
+
+insert into admins values('1289');
+
+
+create table rentings
+(
+Rent_ID int,
+Cust_Name varchar(20),
+Cust_Phone_no bigint,
+Car_no int,
+Date_Rented varchar(10),
+Return_Date varchar(10),
+Driver varchar(5),
+Total_Rent int
+);
+
+create table sales
+(
+Rent_ID int,
+Car_no int,
+Cust_name varchar(20),
+Phone_No bigint,
+Return_Date varchar(10),
+Sales int
+);
+
